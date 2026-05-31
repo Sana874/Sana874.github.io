@@ -248,7 +248,37 @@ updateCards(0);
 /* ===========================
    CONTACT FORM
 =========================== */
+/* ===========================
+   CONTACT FORM
+=========================== */
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = form.querySelector('.btn-submit span');
+  btn.textContent = 'SENDING...';
 
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch('https://formspree.io/f/xvzynbeq', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      btn.textContent = 'MESSAGE SENT ✓';
+      form.reset();
+      setTimeout(() => { btn.textContent = 'TRANSMIT MESSAGE'; }, 3000);
+    } else {
+      btn.textContent = 'ERROR — TRY AGAIN';
+      setTimeout(() => { btn.textContent = 'TRANSMIT MESSAGE'; }, 3000);
+    }
+  } catch {
+    btn.textContent = 'ERROR — TRY AGAIN';
+    setTimeout(() => { btn.textContent = 'TRANSMIT MESSAGE'; }, 3000);
+  }
+});
 /* ===========================
    SMOOTH SCROLL
 =========================== */
