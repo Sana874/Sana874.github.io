@@ -249,7 +249,6 @@ updateCards(0);
    CONTACT FORM
 =========================== */
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
   const btn = this.querySelector('.btn-submit span');
   const orig = btn.textContent;
   btn.textContent = 'MESSAGE SENT ✓';
