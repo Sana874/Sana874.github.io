@@ -248,13 +248,6 @@ updateCards(0);
 /* ===========================
    CONTACT FORM
 =========================== */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  const btn = this.querySelector('.btn-submit span');
-  const orig = btn.textContent;
-  btn.textContent = 'MESSAGE SENT ✓';
-  this.style.opacity = '0.7';
-  setTimeout(() => { btn.textContent = orig; this.reset(); this.style.opacity = '1'; }, 3000);
-});
 
 /* ===========================
    SMOOTH SCROLL
