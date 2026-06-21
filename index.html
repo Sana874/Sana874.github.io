@@ -3,770 +3,495 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sana Firdous - AI/ML & Data Science Portfolio</title>
+  <title>Sana Firdous — AI/ML Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="cursor"></div>
-<div class="cursor-follower"></div>
-<div class="noise"></div>
-<div class="scanlines"></div>
-
-<!-- NAV -->
-<nav id="navbar">
-  <div class="nav-logo">
-    <span class="bracket">[</span>
-    <span class="logo-name">SANA FIRDOUS</span>
-    <span class="bracket">]</span>
-    <span class="cursor-blink">_</span>
+<nav id="nav">
+  <a href="#home" class="nav-logo">SF<span>.</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </div>
-  <ul class="nav-links">
-    <li><a href="#home">HOME</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#projects">PROJECTS</a></li>
-    <li><a href="#skills">SKILLS</a></li>
-    <li><a href="#certifications">CERTS</a></li>
-    <li><a href="#education">EDUCATION</a></li>
-    <li><a href="#experience">EXPERIENCE</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+  <div class="nav-right">
+    <a href="https://linkedin.com/in/sana-firdous-134138272/" target="_blank" class="nav-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://github.com/Sana874" target="_blank" class="nav-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="home" class="hero">
-  <canvas id="matrix-canvas"></canvas>
-  <div class="hero-grid-overlay"></div>
-
-  <div class="hero-content">
-    <div class="hero-terminal">
-      <div class="terminal-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="terminal-title">sana@bits-pilani:~$</span>
-      </div>
-      <div class="terminal-body">
-        <p class="terminal-line"><span class="cmd">whoami</span></p>
-        <p class="terminal-output" id="typewriter-name"></p>
-        <p class="terminal-line"><span class="cmd">cat status.txt</span></p>
-        <p class="terminal-output"><span class="t-green">Final-year CS @ BITS Pilani Dubai</span></p>
-        <p class="terminal-line"><span class="cmd">cat cgpa.txt</span></p>
-        <p class="terminal-output"><span class="t-cyan">CGPA: 9.41 / 10</span></p>
-        <p class="terminal-line"><span class="cmd">./available_for.sh</span></p>
-        <p class="terminal-output status-line"><span class="ok">[OPEN]</span> AI/ML Internships</p>
-        <p class="terminal-output status-line"><span class="ok">[OPEN]</span> Product Management Roles</p>
-        <p class="terminal-output status-line"><span class="ok">[OPEN]</span> Data Science Positions</p>
-        <p class="terminal-output status-line"><span class="ok">[OPEN]</span> SWE / CV Roles</p>
-      </div>
-    </div>
-
-    <div class="hero-text">
-      <div class="hero-tag">BITS PILANI DUBAI · CS · 2026</div>
+  <canvas id="neural-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="hero-tag">Final-year CS &bull; BITS Pilani Dubai &bull; 2026</p>
       <h1 class="hero-name">
-        <span class="glitch" data-text="SANA">SANA</span>
-        <br>
-        <span class="glitch accent" data-text="FIRDOUS">FIRDOUS</span>
+        <span class="hn-light">Sana</span>
+        <span class="hn-bold">Firdous</span>
       </h1>
-      <h3 class="typing-text">Looking for: <span class="role-cycle" id="role-text"></span><span class="blink-cursor">|</span></h3>
-      <p class="hero-subtitle">Building intelligent systems — from <span class="highlight">computer vision</span> and <span class="highlight">LLM-powered agents</span> to <span class="highlight">product analytics</span> at scale. CGPA 9.41. Graduating 2026.</p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary"><span class="btn-inner">VIEW PROJECTS</span></a>
-        <a href="#contact" class="btn-secondary">HIRE ME</a>
+      <p class="hero-role"><span id="role-text"></span><span class="blink">|</span></p>
+      <p class="hero-sub">Building things at the intersection of <em>research</em> and <em>production</em> &mdash; CV models, LLM agents, and data at scale.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-gold">View My Work</a>
+        <a href="mailto:sanafirdous874@gmail.com" class="btn-ghost">Hire Me</a>
       </div>
       <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/sana-firdous-134138272/" target="_blank" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/Sana874" target="_blank" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="mailto:sanafirdous874@gmail.com" class="social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="tel:+971502004587" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://linkedin.com/in/sana-firdous-134138272/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/Sana874" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:sanafirdous874@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        <a href="Sana_Resume.pdf" download class="cv-btn"><i class="fa-solid fa-download"></i> Resume</a>
       </div>
     </div>
-  </div>
-
-  <div class="hero-stats">
-    <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">PROJECTS</span></div>
-    <div class="stat-divider">|</div>
-    <div class="stat"><span class="stat-num" data-target="7" data-suffix="">0</span><span class="stat-label">CERTIFICATIONS</span></div>
-    <div class="stat-divider">|</div>
-    <div class="stat"><span class="stat-num" data-target="9.41" data-suffix="">0</span><span class="stat-label">CGPA</span></div>
-    <div class="stat-divider">|</div>
-    <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">INTERNSHIPS</span></div>
-  </div>
-
-  <div class="scroll-hint">
-    <span>SCROLL</span>
-    <div class="scroll-line"></div>
+    <div class="hero-right">
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="dot dr"></span><span class="dot dy"></span><span class="dot dg"></span>
+          <span class="term-title">sana@bits-pilani ~</span>
+        </div>
+        <div class="term-body">
+          <p><span class="p">$</span> <span class="c">whoami</span></p>
+          <p class="o" id="typewriter-name">&nbsp;</p>
+          <p class="mt"><span class="p">$</span> <span class="c">echo $CGPA</span></p>
+          <p class="o">9.39 / 10</p>
+          <p class="mt"><span class="p">$</span> <span class="c">./open_for.sh</span></p>
+          <p class="o ok"><span>[&#10003;]</span> AI / ML Internships</p>
+          <p class="o ok"><span>[&#10003;]</span> Product Management</p>
+          <p class="o ok"><span>[&#10003;]</span> Data Science</p>
+          <p class="o ok"><span>[&#10003;]</span> SWE / CV Roles</p>
+        </div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hs"><span class="hs-n" data-target="9.39">0</span><span class="hs-l">CGPA</span></div>
+        <div class="hs-sep"></div>
+        <div class="hs"><span class="hs-n" data-target="6">0</span><span class="hs-l">Projects</span></div>
+        <div class="hs-sep"></div>
+        <div class="hs"><span class="hs-n" data-target="3">0</span><span class="hs-l">Internships</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about section-reveal">
-  <div class="section-header">
-    <span class="section-tag">01 // ABOUT</span>
-    <h2 class="section-title">SYSTEM <span class="accent">PROFILE</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="about-container">
-    <div class="about-img-wrap">
-      <div class="img-border-anim">
-        <div class="about-img-placeholder">
-          <div class="img-code-overlay">
-            <span>model = TFM_fusion()</span>
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="sh"><span class="sh-bar"></span><h2 class="sh-text">About Me</h2></div>
+    <div class="about-grid">
+      <div class="about-av">
+        <div class="av-box">
+          <div class="av-code">
+            <span>TFM_fusion.forward()</span>
             <span>mIoU: 0.600</span>
-            <span>yolo_v8.detect()</span>
-            <span>mAP: 91.7%</span>
-            <span>lstm.predict(asl)</span>
-            <span>acc: 98%+</span>
-            <span>LangGraph.run()</span>
+            <span>yolo.detect(frame)</span>
+            <span>acc: 98.4%</span>
+            <span>LangGraph.stream()</span>
           </div>
-          <div class="img-avatar">SF</div>
+          <div class="av-initials">SF</div>
         </div>
       </div>
-      <div class="about-img-decor">
-        <div class="decor-box box1"></div>
-        <div class="decor-box box2"></div>
+      <div class="about-body">
+        <p>Final-year CS student at <strong>BITS Pilani Dubai</strong> specialising in AI/ML and computer vision. I build things that work &mdash; novel CV architectures for my final-year thesis, LLM multi-agent systems, and data-driven product decisions at <strong>LuLu Retail</strong> for millions of users.</p>
+        <dl class="about-dl">
+          <div><dt>Location</dt><dd>Sharjah, UAE</dd></div>
+          <div><dt>Degree</dt><dd>B.E. Computer Science</dd></div>
+          <div><dt>Graduating</dt><dd>September 2026</dd></div>
+          <div><dt>Status</dt><dd class="open">Open to opportunities</dd></div>
+        </dl>
+        <div class="about-orgs">
+          <span><i class="fa-solid fa-building"></i> LuLu Retail</span>
+          <span><i class="fa-solid fa-satellite"></i> MAHASAT CubeSat</span>
+          <span><i class="fa-solid fa-building-columns"></i> Dubai Islamic Bank</span>
+          <span><i class="fa-solid fa-microphone"></i> ICAIN 2025</span>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="about-text">
-      <div class="about-bio">
-        <p>Hi! I'm <span class="highlight">Sana Firdous Abdul Kalam</span> — a final-year Computer Science student at <span class="highlight">BITS Pilani Dubai</span> (CGPA 9.41/10), graduating September 2026. I specialise in <span class="highlight">AI/ML, computer vision, and full-stack development</span>.</p>
-        <p>I've built end-to-end ML pipelines, novel computer vision architectures (published research!), LLM-powered multi-agent systems, and worked on product analytics at <span class="highlight">LuLu Retail</span> serving over a million users. I'm equally comfortable in research and production settings.</p>
+<!-- PROJECTS — 3 col, 4 shown + view more -->
+<section id="projects" class="section projects-sec">
+  <div class="wrap">
+    <div class="sh"><span class="sh-bar"></span><h2 class="sh-text">Projects</h2></div>
+    <div class="proj-grid" id="projGrid" style="grid-template-columns:repeat(2,1fr)">
+
+      <article class="proj-card reveal">
+        <div class="pc-tags"><span>PyTorch</span> <span>DeepLabV3+</span> <span>MobileNetV3</span> <span>CV</span></div>
+        <h3>Trifecta Fusion Model</h3>
+        <p class="pc-sub">Terrain Segmentation &bull; Final-year thesis</p>
+        <p>Multi-modal segmentation fusing RGB, depth, normals &amp; IMU via adaptive gating. <strong>52% mIoU improvement</strong> on zero-shot cross-domain transfer.</p>
+        <div class="pc-metrics">
+          <div><strong>52%</strong><span>&uarr; mIoU</span></div>
+          <div><strong>0.600</strong><span>mIoU</span></div>
+          <div><strong>4-modal</strong><span>fusion</span></div>
+        </div>
+        <div class="pc-links">
+          <a href="https://github.com/Sana874/Terrain-Detection-Segmentation-Autonomous-Navigation" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="pc-tags"><span>LangGraph</span> <span>LangChain</span> <span>Gemini</span> <span>Streamlit</span> <span class="live">Live &#x2197;</span></div>
+        <h3>DoPilot</h3>
+        <p class="pc-sub">Multi-Agent AI Code Generator</p>
+        <p>5-agent pipeline (Planner &rarr; Architect &rarr; Coder &rarr; Security &rarr; Verifier). Converts natural language specs to production codebases with ZIP export.</p>
+        <div class="pc-metrics">
+          <div><strong>5-agent</strong><span>pipeline</span></div>
+          <div><strong>Live</strong><span>deployed</span></div>
+        </div>
+        <div class="pc-links">
+          <a href="https://github.com/Sana874/DoPilot" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="https://dopilot-9uemyzapfmyzq8posqqpnn.streamlit.app/" target="_blank" class="gold-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="pc-tags"><span>TensorFlow</span> <span>Keras</span> <span>MediaPipe</span> <span>LSTM</span> <span>OpenCV</span></div>
+        <h3>ASL Sign Language Detector</h3>
+        <p class="pc-sub">Real-time Computer Vision</p>
+        <p>Real-time ASL finger-spelling at <strong>98%+ accuracy</strong>. 7-frame majority voting under 50ms. Dual-signer support with independent sentence generation.</p>
+        <div class="pc-metrics">
+          <div><strong>98%+</strong><span>accuracy</span></div>
+          <div><strong>&lt;50ms</strong><span>inference</span></div>
+          <div><strong>2-signer</strong><span>support</span></div>
+        </div>
+        <div class="pc-links">
+          <a href="https://github.com/Sana874/ASL_Sign_Language_Detector" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="pc-tags"><span>YOLOv8/v11</span> <span>PyTorch</span> <span>OpenCV</span> <span>TensorRT</span></div>
+        <h3>Traffic Monitoring System</h3>
+        <p class="pc-sub">Intelligent Accident Detection</p>
+        <p>Benchmarked 5 YOLO variants &mdash; YOLOv8n hit <strong>91.7% mAP</strong>, +1.4% vs Roboflow baseline. SMTP alert pipeline + TensorRT edge deployment.</p>
+        <div class="pc-metrics">
+          <div><strong>91.7%</strong><span>mAP</span></div>
+          <div><strong>+1.4%</strong><span>vs baseline</span></div>
+          <div><strong>Edge</strong><span>deployed</span></div>
+        </div>
+        <div class="pc-links">
+          <a href="https://github.com/Sana874/Intelligent_Traffic_Monitoring_System_For_Accident_Prevention" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal proj-extra" style="display:none">
+        <div class="pc-tags"><span>PyTorch</span> <span>Xception</span> <span>Grad-CAM</span> <span>Solidity</span> <span>Web3.py</span></div>
+        <h3>Deepfake Detection via Blockchain</h3>
+        <p class="pc-sub">CNN + On-Chain Logging</p>
+        <p>Xception CNN + Grad-CAM explainability + SHA-256 hashing. Every detection immutably logged on Ethereum via Solidity smart contract.</p>
+        <div class="pc-metrics">
+          <div><strong>On-chain</strong><span>logging</span></div>
+          <div><strong>Grad-CAM</strong><span>explainable</span></div>
+          <div><strong>SHA-256</strong><span>hashed</span></div>
+        </div>
+        <div class="pc-links">
+          <a href="https://github.com/Sana874/Deepfake_Detection-using-Blockchain" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </article>
+
+      <article class="proj-card reveal proj-extra" style="display:none">
+        <div class="pc-tags"><span>PyTorch</span> <span>U-Net</span> <span>DenseNet</span> <span>Streamlit</span></div>
+        <h3>Brain Tumor MRI Detection</h3>
+        <p class="pc-sub">Medical Imaging AI</p>
+        <p>U-Net vs DenseNet benchmarked for MRI tumor segmentation &amp; classification. Interactive Streamlit UI for side-by-side clinical model comparison.</p>
+        <div class="pc-metrics">
+          <div><strong>U-Net</strong><span>segmentation</span></div>
+          <div><strong>DenseNet</strong><span>classification</span></div>
+          <div><strong>MRI</strong><span>imaging</span></div>
+        </div>
+        <div class="pc-links">
+          <a href="https://github.com/Sana874" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </article>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <button class="view-more-btn" id="viewMoreBtn" onclick="toggleProjects()">
+        <i class="fa-solid fa-chevron-down" id="viewMoreIcon"></i> View All 6 Projects
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE — left-side vertical timeline -->
+<section id="experience" class="section xp-sec">
+  <div class="wrap">
+    <div class="sh"><span class="sh-bar"></span><h2 class="sh-text">Experience</h2></div>
+
+    <div class="vtl">
+      <div class="vtl-line"></div>
+
+      <div class="vtl-item reveal">
+        <div class="vtl-node">
+          <div class="vtl-dot active"></div>
+        </div>
+        <div class="vtl-card">
+          <div class="vtl-head">
+            <div>
+              <h3>AI Product &amp; Analytics Intern</h3>
+              <p class="vtl-org"><i class="fa-solid fa-building"></i> LuLu Retail &bull; Dubai, UAE</p>
+            </div>
+            <div class="vtl-right">
+              <span class="vtl-date">Jan 2026 &ndash; Present</span>
+              <span class="vtl-badge">Current</span>
+            </div>
+          </div>
+          <ul class="vtl-ul">
+            <li>Defined feature specs for an AI personalisation &amp; recommendation engine serving millions of users across mobile and desktop.</li>
+            <li>Identified cart-to-checkout as the critical 5% drop-off via iOS/Android funnel analysis &mdash; directly shaped product roadmap.</li>
+            <li>Post-launch quantitative analysis for LuLu Money; data-backed v2 proposal adopted by the product team.</li>
+            <li>Built KPI frameworks covering order tracking, return/refund flows, and support contact rates.</li>
+          </ul>
+          <div class="vtl-tags"><span>Product Analytics</span><span>ML Pipeline</span><span>Funnel Analysis</span><span>KPI Frameworks</span></div>
+        </div>
       </div>
 
-      <div class="about-details">
-        <div class="detail-item">
-          <span class="detail-label">LOCATION</span>
-          <span class="detail-value">// Sharjah, UAE</span>
+      <div class="vtl-item reveal">
+        <div class="vtl-node">
+          <div class="vtl-dot active"></div>
         </div>
-        <div class="detail-item">
-          <span class="detail-label">UNIVERSITY</span>
-          <span class="detail-value">// BITS Pilani Dubai Campus</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">GRADUATION</span>
-          <span class="detail-value">// September 2026</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">SPECIALISATION</span>
-          <span class="detail-value">// AI/ML · CV · Full-Stack</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">STATUS</span>
-          <span class="detail-value status-available">// Open to internship opportunities</span>
+        <div class="vtl-card">
+          <div class="vtl-head">
+            <div>
+              <h3>Team Lead &mdash; Communication Systems</h3>
+              <p class="vtl-org"><i class="fa-solid fa-satellite"></i> MAHASAT CubeSat &bull; BITS Pilani Dubai</p>
+            </div>
+            <div class="vtl-right">
+              <span class="vtl-date">Sept 2024 &ndash; Jan 2026</span>
+              <span class="vtl-badge">Current</span>
+            </div>
+          </div>
+          <ul class="vtl-ul">
+            <li>Leading CubeSat communication subsystem: telemetry workflows, packet structures, and device-to-ground data transmission.</li>
+            <li>Signal processing and data integrity requirements across hardware/software boundaries.</li>
+          </ul>
+          <div class="vtl-tags"><span>Signal Processing</span><span>Telemetry</span><span>Embedded Systems</span><span>Team Lead</span></div>
         </div>
       </div>
 
-      <a href="mailto:sanafirdous874@gmail.com" class="btn-download">
-        <i class="fa-solid fa-envelope"></i>
-        GET IN TOUCH
+      <div class="vtl-item reveal">
+        <div class="vtl-node">
+          <div class="vtl-dot"></div>
+        </div>
+        <div class="vtl-card">
+          <div class="vtl-head">
+            <div>
+              <h3>Professional Assistantship &mdash; C Programming Lab</h3>
+              <p class="vtl-org"><i class="fa-solid fa-graduation-cap"></i> BITS Pilani, Dubai Campus</p>
+            </div>
+            <span class="vtl-date">Sept 2025 &ndash; Jan 2026</span>
+          </div>
+          <ul class="vtl-ul">
+            <li>Mentored undergraduate students in debugging, logic-building, and structured problem-solving in C.</li>
+          </ul>
+          <div class="vtl-tags"><span>C Programming</span><span>Mentoring</span><span>Teaching</span></div>
+        </div>
+      </div>
+
+      <div class="vtl-item reveal">
+        <div class="vtl-node">
+          <div class="vtl-dot"></div>
+        </div>
+        <div class="vtl-card">
+          <div class="vtl-head">
+            <div>
+              <h3>Digitization Intern</h3>
+              <p class="vtl-org"><i class="fa-solid fa-building-columns"></i> Dubai Islamic Bank &bull; Dubai, UAE</p>
+            </div>
+            <span class="vtl-date">June &ndash; Aug 2024</span>
+          </div>
+          <ul class="vtl-ul">
+            <li>Analysed digital channel adoption patterns to support data-driven feature prioritisation for the digital banking team.</li>
+            <li>Mapped customer onboarding journeys across ERP/CRM platforms, identifying process gaps through structured data analysis.</li>
+          </ul>
+          <div class="vtl-tags"><span>Data Analysis</span><span>ERP/CRM</span><span>Digital Banking</span><span>Process Mapping</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Education — clean, inside exp section -->
+    <div class="sh" style="margin-top:4rem"><span class="sh-bar"></span><h2 class="sh-text">Education</h2></div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <p class="vtl-date">Sept 2022 &ndash; Sept 2026</p>
+        <h3>B.E. Computer Science</h3>
+        <p class="vtl-org">BITS Pilani, Dubai Campus</p>
+        <span class="vtl-badge" style="position:static;display:inline-block;margin:.6rem 0">CGPA 9.39 / 10</span>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:.4rem">Large Language Models &bull; Artificial Intelligence &bull; Data Mining &bull; Foundations of Data Science &bull; Applied Statistical Methods &bull; Probability &amp; Statistics &bull; DSA &bull; Database Systems &bull; Operating Systems &bull; Computer Networks &bull; Optimization &bull; Object-Oriented Programming</p>
+      </div>
+      <div class="edu-card reveal">
+        <p class="vtl-date">Until Aug 2022</p>
+        <h3>CBSE Class 12 &mdash; 94%</h3>
+        <p class="vtl-org">Our Own English High School, Sharjah</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS — progress bars per category -->
+<section id="skills" class="section">
+  <div class="wrap">
+    <div class="sh"><span class="sh-bar"></span><h2 class="sh-text">Skills</h2></div>
+    <div class="sk-grid">
+
+      <div class="sk-card reveal">
+        <h4><i class="fa-solid fa-brain"></i> AI / ML / Computer Vision</h4>
+        <div class="sk-list">
+          <div class="sk-row"><span>PyTorch</span><div class="sk-bar"><div class="sk-fill" data-w="92"></div></div><span class="sk-pct">92%</span></div>
+          <div class="sk-row"><span>TensorFlow / Keras</span><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div><span class="sk-pct">88%</span></div>
+          <div class="sk-row"><span>Scikit-learn</span><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div><span class="sk-pct">90%</span></div>
+          <div class="sk-row"><span>YOLOv8 / v11</span><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div><span class="sk-pct">85%</span></div>
+          <div class="sk-row"><span>OpenCV / MediaPipe</span><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div><span class="sk-pct">88%</span></div>
+        </div>
+      </div>
+
+      <div class="sk-card reveal">
+        <h4><i class="fa-solid fa-robot"></i> LLMs &amp; Agentic AI</h4>
+        <div class="sk-list">
+          <div class="sk-row"><span>LangChain / LangGraph</span><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div><span class="sk-pct">85%</span></div>
+          <div class="sk-row"><span>RAG / FAISS</span><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div><span class="sk-pct">82%</span></div>
+          <div class="sk-row"><span>Gemini / LLaMA / Groq</span><div class="sk-bar"><div class="sk-fill" data-w="80"></div></div><span class="sk-pct">80%</span></div>
+          <div class="sk-row"><span>Transformers / HuggingFace</span><div class="sk-bar"><div class="sk-fill" data-w="78"></div></div><span class="sk-pct">78%</span></div>
+          <div class="sk-row"><span>MCP Servers</span><div class="sk-bar"><div class="sk-fill" data-w="70"></div></div><span class="sk-pct">70%</span></div>
+        </div>
+      </div>
+
+      <div class="sk-card reveal">
+        <h4><i class="fa-solid fa-code"></i> Languages &amp; Backend</h4>
+        <div class="sk-list">
+          <div class="sk-row"><span>Python</span><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div><span class="sk-pct">95%</span></div>
+          <div class="sk-row"><span>SQL</span><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div><span class="sk-pct">85%</span></div>
+          <div class="sk-row"><span>C / C++</span><div class="sk-bar"><div class="sk-fill" data-w="78"></div></div><span class="sk-pct">78%</span></div>
+          <div class="sk-row"><span>FastAPI / REST</span><div class="sk-bar"><div class="sk-fill" data-w="80"></div></div><span class="sk-pct">80%</span></div>
+          <div class="sk-row"><span>Solidity / Web3.py</span><div class="sk-bar"><div class="sk-fill" data-w="65"></div></div><span class="sk-pct">65%</span></div>
+        </div>
+      </div>
+
+      <div class="sk-card reveal">
+        <h4><i class="fa-solid fa-layer-group"></i> Frontend &amp; Data</h4>
+        <div class="sk-list">
+          <div class="sk-row"><span>Next.js / React / TS</span><div class="sk-bar"><div class="sk-fill" data-w="75"></div></div><span class="sk-pct">75%</span></div>
+          <div class="sk-row"><span>Streamlit</span><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div><span class="sk-pct">90%</span></div>
+          <div class="sk-row"><span>Pandas / NumPy</span><div class="sk-bar"><div class="sk-fill" data-w="92"></div></div><span class="sk-pct">92%</span></div>
+          <div class="sk-row"><span>Power BI / Tableau</span><div class="sk-bar"><div class="sk-fill" data-w="75"></div></div><span class="sk-pct">75%</span></div>
+          <div class="sk-row"><span>Azure / Google Cloud</span><div class="sk-bar"><div class="sk-fill" data-w="70"></div></div><span class="sk-pct">70%</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CERTIFICATIONS — 3 col cards -->
+    <div class="sh" style="margin-top:4rem"><span class="sh-bar"></span><h2 class="sh-text">Certifications</h2></div>
+    <div class="cert-cards-grid">
+      <a href="https://coursera.org/share/13c2c22e5016c8eea25f70a6ae958ae1" target="_blank" class="cert-card-item reveal">
+        <div class="cert-card-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="cert-card-body">
+          <h4>AI Agents &amp; Agentic AI with Python</h4>
+          <p>Vanderbilt University</p>
+          <span>2025</span>
+        </div>
+      </a>
+      <div class="cert-card-item reveal">
+        <div class="cert-card-icon"><i class="fa-solid fa-microchip"></i></div>
+        <div class="cert-card-body">
+          <h4>AI Engineering Career Readiness</h4>
+          <p>Tecoholic &times; BITS Pilani &bull; Consistent Performer</p>
+          <span>Oct &ndash; Dec 2025</span>
+        </div>
+      </div>
+      <a href="https://www.geeksforgeeks.org/certificate/1a3e0b357dcd2586330a6448a7174a35" target="_blank" class="cert-card-item reveal">
+        <div class="cert-card-icon"><i class="fa-brands fa-google"></i></div>
+        <div class="cert-card-body">
+          <h4>Google Cloud Gen AI Learning Path</h4>
+          <p>Google Cloud</p>
+          <span>2024</span>
+        </div>
+      </a>
+      <a href="https://learn.microsoft.com/api/achievements/share/en-us/SanaFirdous-7321/KGAZZN5B?sharingId=2B2C14FB6E83D48" target="_blank" class="cert-card-item reveal">
+        <div class="cert-card-icon"><i class="fa-brands fa-microsoft"></i></div>
+        <div class="cert-card-body">
+          <h4>Azure Cloud Computing Fundamentals</h4>
+          <p>Microsoft Learn</p>
+          <span>2024</span>
+        </div>
+      </a>
+      <a href="https://simpli-web.app.link/e/nmaDs9QEnXb" target="_blank" class="cert-card-item reveal">
+        <div class="cert-card-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <div class="cert-card-body">
+          <h4>Power BI Fundamentals</h4>
+          <p>Simplilearn</p>
+          <span>2024</span>
+        </div>
+      </a>
+      <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_fEt3XqArwARTJjLMY_1762090526459_completion_certificate.pdf" target="_blank" class="cert-card-item reveal">
+        <div class="cert-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="cert-card-body">
+          <h4>Deloitte Audit &amp; Assurance Internship</h4>
+          <p>Deloitte &bull; Forage</p>
+          <span>2024</span>
+        </div>
       </a>
     </div>
-  </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects" class="projects section-reveal">
-  <div class="section-header">
-    <span class="section-tag">02 // PROJECTS</span>
-    <h2 class="section-title">PROJECT <span class="accent">WORKS</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="projects-stack" id="projectsStack">
-
-    <!-- Card 1: Trifecta Fusion Model -->
-    <div class="project-card" style="--card-index:0">
-      <div class="card-number">01</div>
-      <div class="card-content">
-        <div class="card-tags">
-          <span class="tag">PyTorch</span>
-          <span class="tag">DeepLabV3+</span>
-          <span class="tag">MobileNetV3</span>
-          <span class="tag">Computer Vision</span>
-        </div>
-        <h3 class="card-title">Trifecta Fusion Model - Terrain Segmentation</h3>
-        <p class="card-desc">Novel multi-modal semantic segmentation architecture fusing RGB, depth, surface normals, and IMU via dynamic adaptive gating. Published as a research paper at BITS Pilani Dubai. Achieved 52% relative improvement in cross-domain mIoU under zero-shot transfer from Cityscapes to RELLIS-3D off-road dataset.</p>
-        <div class="card-metrics">
-          <div class="metric"><span class="m-val">52%</span><span class="m-label">↑ mIoU Gain</span></div>
-          <div class="metric"><span class="m-val">0.600</span><span class="m-label">mIoU Score</span></div>
-          <div class="metric"><span class="m-val">4-Modal</span><span class="m-label">Fusion</span></div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Sana874" target="_blank" class="card-btn"><i class="fa-brands fa-github"></i> CODE</a>
-          <a href="#" class="card-btn card-btn-accent"><i class="fa-solid fa-file-lines"></i> PAPER</a>
-        </div>
+    <!-- Volunteering -->
+    <div class="sh" style="margin-top:3.5rem"><span class="sh-bar"></span><h2 class="sh-text">Volunteering</h2></div>
+    <div class="cert-list-wrap">
+      <div class="cert-row reveal">
+        <i class="fa-solid fa-microphone"></i>
+        <div><strong>Host &mdash; ICAIN 2025</strong><span>International AI Conference &bull; BITS Pilani &mdash; Moderated keynotes &amp; panel sessions</span></div>
       </div>
-      <div class="card-visual">
-        <div class="vis-chart">
-          <div class="bar-chart">
-            <div class="bar" style="--h:65%"><span>RGB</span></div>
-            <div class="bar" style="--h:72%"><span>+D</span></div>
-            <div class="bar" style="--h:100%"><span>TFM</span></div>
-          </div>
-          <span class="vis-label">mIoU Comparison</span>
-        </div>
+      <div class="cert-row reveal">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <div><strong>Fundraising Intern &mdash; REWT (NGO)</strong><span>Rampur Education &amp; Welfare Trust &mdash; Digital outreach &amp; donor relations</span></div>
       </div>
     </div>
 
-    <!-- Card 2: DoPilot -->
-    <div class="project-card" style="--card-index:5">
-      <div class="card-number">02</div>
-      <div class="card-content">
-        <div class="card-tags">
-          <span class="tag">LangGraph</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">Gemini</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag tag-pub">🌐 LIVE</span>
-        </div>
-        <h3 class="card-title">DoPilot - Multi-Agent AI Code Generator</h3>
-        <p class="card-desc">LangGraph-orchestrated multi-agent pipeline (Planner → Architect → Coder → Security Agent → Verifier) that transforms natural language into production-ready codebases with security scanning and ZIP export. 10-question guided Q&A workflow synthesises user input into detailed technical spec before generation. Live at dopilot.streamlit.app.</p>
-        <div class="card-metrics">
-          <div class="metric"><span class="m-val">5-Agent</span><span class="m-label">Pipeline</span></div>
-          <div class="metric"><span class="m-val">LangGraph</span><span class="m-label">Orchestration</span></div>
-          <div class="metric"><span class="m-val">LIVE</span><span class="m-label">Deployed</span></div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Sana874" target="_blank" class="card-btn"><i class="fa-brands fa-github"></i> CODE</a>
-          <a href="https://dopilot.streamlit.app" target="_blank" class="card-btn card-btn-accent"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO</a>
-        </div>
-      </div>
-      <div class="card-visual">
-        <div class="vis-chart rag-visual">
-          <div class="rag-flow" style="flex-direction:column; gap:0.3rem;">
-            <div class="rag-node" style="width:100%; text-align:center;">Planner → Architect</div>
-            <div class="rag-arrow" style="transform:rotate(90deg)">→</div>
-            <div class="rag-node" style="width:100%; text-align:center;">Coder → Security</div>
-            <div class="rag-arrow" style="transform:rotate(90deg)">→</div>
-            <div class="rag-node accent-node" style="width:100%; text-align:center;">Verifier</div>
-          </div>
-          <span class="vis-label">Agent Pipeline</span>
-        </div>
-      </div>
-    </div>
-
-        <!-- Card 3: ASL -->
-    <div class="project-card" style="--card-index:3">
-      <div class="card-number">03</div>
-      <div class="card-content">
-        <div class="card-tags">
-          <span class="tag">TensorFlow</span>
-          <span class="tag">MediaPipe</span>
-          <span class="tag">LSTM</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Streamlit</span>
-        </div>
-        <h3 class="card-title">ASL Sign Language Detector</h3>
-        <p class="card-desc">Real-time ASL finger-spelling recognition achieving 98%+ validation accuracy. Custom LSTM trained on self-recorded dataset of 21 MediaPipe hand landmarks per frame (63 features). 7-frame majority voting stabilisation keeps live inference flicker under 50ms. Supports two simultaneous signers with independent sentence generation.</p>
-        <div class="card-metrics">
-          <div class="metric"><span class="m-val">98%+</span><span class="m-label">Val Accuracy</span></div>
-          <div class="metric"><span class="m-val">&lt;50ms</span><span class="m-label">Inference</span></div>
-          <div class="metric"><span class="m-val">2-Signer</span><span class="m-label">Support</span></div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Sana874" target="_blank" class="card-btn"><i class="fa-brands fa-github"></i> CODE</a>
-        </div>
-      </div>
-      <div class="card-visual">
-        <div class="vis-chart">
-          <svg class="roc-curve" viewBox="0 0 100 80">
-            <text x="50" y="30" fill="#00ff9d" font-size="14" text-anchor="middle" font-family="monospace">98%+</text>
-            <text x="50" y="50" fill="#5a7a9a" font-size="9" text-anchor="middle" font-family="monospace">Validation</text>
-            <text x="50" y="65" fill="#5a7a9a" font-size="9" text-anchor="middle" font-family="monospace">Accuracy</text>
-          </svg>
-          <span class="vis-label">Model Performance</span>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Card 2: Traffic Monitoring -->
-    <div class="project-card" style="--card-index:1">
-      <div class="card-number">04</div>
-      <div class="card-content">
-        <div class="card-tags">
-          <span class="tag">YOLOv8/v11</span>
-          <span class="tag">PyTorch</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">TensorRT</span>
-        </div>
-        <h3 class="card-title">Intelligent Traffic Monitoring System</h3>
-        <p class="card-desc">Benchmarked five YOLO variants for real-time accident and vehicle detection. YOLOv8n achieved 91.7% mAP, 88.27% precision, 88.69% recall — outperforming Roboflow baseline by +1.4% mAP. Built automated SMTP email alert pipeline; deployed with TensorRT optimisation for edge-device inference.</p>
-        <div class="card-metrics">
-          <div class="metric"><span class="m-val">91.7%</span><span class="m-label">mAP</span></div>
-          <div class="metric"><span class="m-val">88.27%</span><span class="m-label">Precision</span></div>
-          <div class="metric"><span class="m-val">+1.4%</span><span class="m-label">vs Baseline</span></div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Sana874" target="_blank" class="card-btn"><i class="fa-brands fa-github"></i> CODE</a>
-        </div>
-      </div>
-      <div class="card-visual">
-        <div class="vis-chart">
-          <div class="bar-chart">
-            <div class="bar" style="--h:88%"><span>mAP</span></div>
-            <div class="bar" style="--h:88%"><span>Prec</span></div>
-            <div class="bar" style="--h:89%"><span>Rec</span></div>
-          </div>
-          <span class="vis-label">YOLOv8n Metrics</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3: Deepfake Detection -->
-    <div class="project-card" style="--card-index:2">
-      <div class="card-number">05</div>
-      <div class="card-content">
-        <div class="card-tags">
-          <span class="tag">PyTorch</span>
-          <span class="tag">Xception</span>
-          <span class="tag">Grad-CAM</span>
-          <span class="tag">Solidity</span>
-          <span class="tag">Web3.py</span>
-        </div>
-        <h3 class="card-title">Deepfake Detection using Blockchain</h3>
-        <p class="card-desc">End-to-end deepfake detection pipeline: Xception-based CNN inference + Grad-CAM explainability heatmaps + SHA-256 image hashing. Integrated Ethereum smart contract (Solidity) to log every detection result immutably on-chain with four smart contract functions for tamper-proof retrieval.</p>
-        <div class="card-metrics">
-          <div class="metric"><span class="m-val">On-Chain</span><span class="m-label">Results Log</span></div>
-          <div class="metric"><span class="m-val">Grad-CAM</span><span class="m-label">Explainability</span></div>
-          <div class="metric"><span class="m-val">SHA-256</span><span class="m-label">Hashing</span></div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Sana874" target="_blank" class="card-btn"><i class="fa-brands fa-github"></i> CODE</a>
-        </div>
-      </div>
-      <div class="card-visual">
-        <div class="vis-chart rag-visual">
-          <div class="rag-flow">
-            <div class="rag-node">CNN</div>
-            <div class="rag-arrow">→</div>
-            <div class="rag-node">Grad-CAM</div>
-            <div class="rag-arrow">→</div>
-            <div class="rag-node accent-node">Chain</div>
-          </div>
-          <span class="vis-label">Detection Pipeline</span>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Card 5: Brain Tumor -->
-    <div class="project-card" style="--card-index:4">
-      <div class="card-number">06</div>
-      <div class="card-content">
-        <div class="card-tags">
-          <span class="tag">PyTorch</span>
-          <span class="tag">U-Net</span>
-          <span class="tag">DenseNet</span>
-          <span class="tag">Streamlit</span>
-        </div>
-        <h3 class="card-title">Brain Tumor Detection - Segmentation & Classification</h3>
-        <p class="card-desc">Developed and benchmarked U-Net and DenseNet architectures for MRI-based brain tumor segmentation and classification. Preprocessed and validated medical imaging datasets with consistent labelling and augmentation. Built an interactive Streamlit interface for clinical result visualisation with side-by-side model comparison.</p>
-        <div class="card-metrics">
-          <div class="metric"><span class="m-val">U-Net</span><span class="m-label">Segmentation</span></div>
-          <div class="metric"><span class="m-val">DenseNet</span><span class="m-label">Classification</span></div>
-          <div class="metric"><span class="m-val">MRI</span><span class="m-label">Medical Imaging</span></div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/Sana874" target="_blank" class="card-btn"><i class="fa-brands fa-github"></i> CODE</a>
-        </div>
-      </div>
-      <div class="card-visual">
-        <div class="vis-chart pipeline-vis">
-          <div class="pipeline-nodes">
-            <div class="p-node">MRI</div>
-            <div class="p-arrow">⟶</div>
-            <div class="p-node">U-Net</div>
-            <div class="p-arrow">⟶</div>
-            <div class="p-node accent-node">Segment</div>
-          </div>
-          <span class="vis-label">Segmentation Flow</span>
-        </div>
-      </div>
-    </div>
-
-    
-
-  </div>
-
-  <div class="projects-nav">
-    <button class="proj-nav-btn" id="prevCard"><i class="fa-solid fa-chevron-up"></i></button>
-    <div class="proj-dots" id="projDots"></div>
-    <button class="proj-nav-btn" id="nextCard"><i class="fa-solid fa-chevron-down"></i></button>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="skills section-reveal">
-  <div class="section-header">
-    <span class="section-tag">03 // SKILLS</span>
-    <h2 class="section-title">TECH <span class="accent">STACK</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="skills-grid">
-    <div class="skill-category">
-      <div class="skill-cat-title"><i class="fa-solid fa-brain"></i> AI / ML / CV</div>
-      <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div><span class="skill-pct">92%</span></div>
-        <div class="skill-item"><span class="skill-name">TensorFlow/Keras</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div><span class="skill-pct">88%</span></div>
-        <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div><span class="skill-pct">90%</span></div>
-        <div class="skill-item"><span class="skill-name">YOLOv8/v11</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div>
-        <div class="skill-item"><span class="skill-name">OpenCV / MediaPipe</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div><span class="skill-pct">88%</span></div>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <div class="skill-cat-title"><i class="fa-solid fa-robot"></i> LLMs & AGENTS</div>
-      <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">LangChain / LangGraph</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div>
-        <div class="skill-item"><span class="skill-name">RAG / FAISS</span><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div><span class="skill-pct">82%</span></div>
-        <div class="skill-item"><span class="skill-name">Gemini / LLaMA / Groq</span><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div>
-        <div class="skill-item"><span class="skill-name">MCP Servers</span><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div>
-        <div class="skill-item"><span class="skill-name">Transformers / HuggingFace</span><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div><span class="skill-pct">78%</span></div>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <div class="skill-cat-title"><i class="fa-solid fa-code"></i> LANGUAGES & BACKEND</div>
-      <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div><span class="skill-pct">95%</span></div>
-        <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div>
-        <div class="skill-item"><span class="skill-name">C / C++</span><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div><span class="skill-pct">78%</span></div>
-        <div class="skill-item"><span class="skill-name">FastAPI / REST</span><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div>
-        <div class="skill-item"><span class="skill-name">Solidity / Web3.py</span><div class="skill-bar"><div class="skill-fill" data-width="65"></div></div><span class="skill-pct">65%</span></div>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <div class="skill-cat-title"><i class="fa-solid fa-layer-group"></i> FRONTEND & DATA</div>
-      <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">Next.js / React / TS</span><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div><span class="skill-pct">75%</span></div>
-        <div class="skill-item"><span class="skill-name">Streamlit</span><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div><span class="skill-pct">90%</span></div>
-        <div class="skill-item"><span class="skill-name">Pandas / NumPy</span><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div><span class="skill-pct">92%</span></div>
-        <div class="skill-item"><span class="skill-name">Power BI / Tableau</span><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div><span class="skill-pct">75%</span></div>
-        <div class="skill-item"><span class="skill-name">Azure / Google Cloud</span><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="tech-orbit-wrap">
-    <div class="orbit-center">CORE</div>
-    <div class="orbit orbit-1">
-      <div class="orbit-item" style="--angle:0deg"><span>Python</span></div>
-      <div class="orbit-item" style="--angle:90deg"><span>PyTorch</span></div>
-      <div class="orbit-item" style="--angle:180deg"><span>LangGraph</span></div>
-      <div class="orbit-item" style="--angle:270deg"><span>OpenCV</span></div>
-    </div>
-    <div class="orbit orbit-2">
-      <div class="orbit-item" style="--angle:45deg"><span>YOLO</span></div>
-      <div class="orbit-item" style="--angle:135deg"><span>FastAPI</span></div>
-      <div class="orbit-item" style="--angle:225deg"><span>Next.js</span></div>
-      <div class="orbit-item" style="--angle:315deg"><span>Azure</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="certifications section-reveal">
-  <div class="section-header">
-    <span class="section-tag">04 // CERTS</span>
-    <h2 class="section-title">VERIFIED <span class="accent">CREDENTIALS</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="certs-grid">
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-microchip"></i></div>
-      <div class="cert-info">
-        <h4>AI Engineering Career Readiness Program</h4>
-        <span class="cert-org">Tecoholic × BITS Pilani · Consistent Performer</span>
-        <span class="cert-year">Oct–Dec 2025</span>
-      </div>
-      <div class="cert-badge verified">VERIFIED</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-robot"></i></div>
-      <div class="cert-info">
-        <h4>AI Agents and Agentic AI with Python</h4>
-        <span class="cert-org">Vanderbilt University</span>
-        <span class="cert-year">2025</span>
-      </div>
-      <div class="cert-badge verified">VERIFIED</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-brands fa-google"></i></div>
-      <div class="cert-info">
-        <h4>Google Cloud Generative AI Learning Path</h4>
-        <span class="cert-org">Google Cloud</span>
-        <span class="cert-year">2024</span>
-      </div>
-      <div class="cert-badge verified">VERIFIED</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-brands fa-microsoft"></i></div>
-      <div class="cert-info">
-        <h4>Azure Cloud Computing Fundamentals</h4>
-        <span class="cert-org">Microsoft Learn</span>
-        <span class="cert-year">2024</span>
-      </div>
-      <div class="cert-badge verified">VERIFIED</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-chart-bar"></i></div>
-      <div class="cert-info">
-        <h4>Power BI Fundamentals</h4>
-        <span class="cert-org">Simplilearn</span>
-        <span class="cert-year">2024</span>
-      </div>
-      <div class="cert-badge verified">VERIFIED</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-briefcase"></i></div>
-      <div class="cert-info">
-        <h4>Deloitte Audit & Assurance Virtual Internship</h4>
-        <span class="cert-org">Deloitte · Forage</span>
-        <span class="cert-year">2024</span>
-      </div>
-      <div class="cert-badge verified">VERIFIED</div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="education section-reveal">
-  <div class="section-header">
-    <span class="section-tag">05 // EDUCATION</span>
-    <h2 class="section-title">KNOWLEDGE <span class="accent">TREE</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-line"></div>
-      <div class="timeline-card">
-        <div class="tl-year">Sept 2022 — Sept 2026</div>
-        <div class="tl-degree">B.E. in Computer Science</div>
-        <div class="tl-school">Birla Institute of Technology and Science (BITS Pilani), Dubai Campus</div>
-        <div class="tl-details">
-          <span class="tl-tag">CGPA: 9.41 / 10</span>
-          <span class="tl-tag">AI/ML Specialisation</span>
-          <span class="tl-tag">LLMs · AI · Data Mining · CV</span>
-        </div>
-        <div class="tl-courses">
-          <span class="tl-course-label">KEY COURSES:</span>
-          Large Language Models · Artificial Intelligence · Applied Statistical Methods · Data Mining · Foundations of Data Science · Probability & Statistics · DSA · Database Systems · Operating Systems · Computer Networks · Optimization
-        </div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-card">
-        <div class="tl-year">April 2008 — Aug 2022</div>
-        <div class="tl-degree">Higher Secondary Education — CBSE Class 12</div>
-        <div class="tl-school">Our Own English High School, Sharjah</div>
-        <div class="tl-details">
-          <span class="tl-tag">94%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="experience section-reveal">
-  <div class="section-header">
-    <span class="section-tag">06 // EXPERIENCE</span>
-    <h2 class="section-title">MISSION <span class="accent">LOG</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="exp-container">
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">Jan 2026 – Present</span>
-        <div class="exp-dot-line">
-          <div class="exp-dot active"></div>
-          <div class="exp-vline"></div>
-        </div>
-      </div>
-      <div class="exp-card active-exp">
-        <div class="exp-badge">CURRENT</div>
-        <h3 class="exp-title">Tech Product Management Intern</h3>
-        <div class="exp-company"><i class="fa-solid fa-building"></i> LuLu Retail · Dubai, UAE</div>
-        <p class="exp-desc">Defined data requirements and feature specs for an AI-driven personalisation & recommendation engine across mobile and desktop (millions of users). Analysed session-to-purchase conversion funnel (iOS vs Android); identified cart-to-checkout as critical drop-off at 5%. Conducted quantitative post-launch analysis for LuLu Money. Developed KPI tracking frameworks for order tracking, return/refund flows, and support contact rates.</p>
-        <div class="exp-skills">
-          <span>Product Analytics</span><span>ML Pipeline</span><span>KPI Frameworks</span><span>Funnel Analysis</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">Sept 2024 – Present</span>
-        <div class="exp-dot-line">
-          <div class="exp-dot active"></div>
-          <div class="exp-vline"></div>
-        </div>
-      </div>
-      <div class="exp-card active-exp">
-        <div class="exp-badge">CURRENT</div>
-        <h3 class="exp-title">Team Lead — Communication Systems</h3>
-        <div class="exp-company"><i class="fa-solid fa-satellite"></i> MAHASAT CubeSat Satellite Project · BITS Pilani Dubai</div>
-        <p class="exp-desc">Leading CubeSat communication subsystem development — telemetry workflows, packet structures, and device-to-ground data transmission across hardware/software boundaries with rigorous signal processing and data integrity requirements.</p>
-        <div class="exp-skills">
-          <span>Signal Processing</span><span>Telemetry</span><span>Embedded Systems</span><span>Team Lead</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">Sept 2025 – Jan 2026</span>
-        <div class="exp-dot-line">
-          <div class="exp-dot active"></div>
-          <div class="exp-vline"></div>
-        </div>
-      </div>
-      <div class="exp-card active-exp">
-        <h3 class="exp-title">Professional Assistantship — C Programming Lab</h3>
-        <div class="exp-company"><i class="fa-solid fa-graduation-cap"></i> BITS Pilani, Dubai Campus</div>
-        <p class="exp-desc">Mentoring undergraduate students in debugging, logic-building, and structured problem-solving in C programming.</p>
-        <div class="exp-skills">
-          <span>C Programming</span><span>Mentoring</span><span>Teaching</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">June – Aug 2024</span>
-        <div class="exp-dot-line">
-          <div class="exp-dot"></div>
-          <div class="exp-vline"></div>
-        </div>
-      </div>
-      <div class="exp-card">
-        <h3 class="exp-title">Digitization Intern</h3>
-        <div class="exp-company"><i class="fa-solid fa-building-columns"></i> Dubai Islamic Bank · Dubai, UAE</div>
-        <p class="exp-desc">Analysed digital channel adoption patterns to support data-driven feature prioritisation for the digital banking team. Mapped customer onboarding journeys across ERP/CRM platforms, identifying process gaps through structured data analysis.</p>
-        <div class="exp-skills">
-          <span>Data Analysis</span><span>ERP/CRM</span><span>Digital Banking</span><span>Process Mapping</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">2025</span>
-        <div class="exp-dot-line">
-          <div class="exp-dot"></div>
-        </div>
-      </div>
-      <div class="exp-card">
-        <h3 class="exp-title">Host — ICAIN 2025</h3>
-        <div class="exp-company"><i class="fa-solid fa-microphone"></i> International Conference on Artificial Intelligence · BITS Pilani</div>
-        <p class="exp-desc">Moderated keynote and panel sessions, coordinated logistics with speakers, and ensured seamless event execution at an international AI conference.</p>
-        <div class="exp-skills">
-          <span>Event Hosting</span><span>AI Conference</span><span>Moderation</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact section-reveal">
-  <div class="section-header">
-    <span class="section-tag">07 // CONTACT</span>
-    <h2 class="section-title">ESTABLISH <span class="accent">CONNECTION</span></h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="contact-container">
-    <div class="contact-left">
-      <p class="contact-intro">Final-year CS student at BITS Pilani Dubai, open to AI/ML internships, product management roles, computer vision and data science positions. Let's build something intelligent together.</p>
-      <div class="contact-links">
-        <a href="mailto:sanafirdous874@gmail.com" class="contact-item">
-          <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div class="ci-text">
-            <span class="ci-label">EMAIL</span>
-            <span class="ci-value">sanafirdous874@gmail.com</span>
-          </div>
-        </a>
-        <a href="tel:+971502004587" class="contact-item">
-          <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
-          <div class="ci-text">
-            <span class="ci-label">PHONE</span>
-            <span class="ci-value">+971 50 200 4587</span>
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/sana-firdous-134138272/" target="_blank" class="contact-item">
-          <div class="ci-icon"><i class="fa-brands fa-linkedin"></i></div>
-          <div class="ci-text">
-            <span class="ci-label">LINKEDIN</span>
-            <span class="ci-value">linkedin.com/in/sana-firdous-134138272</span>
-          </div>
-        </a>
-        <a href="https://github.com/Sana874" target="_blank" class="contact-item">
-          <div class="ci-icon"><i class="fa-brands fa-github"></i></div>
-          <div class="ci-text">
-            <span class="ci-label">GITHUB</span>
-            <span class="ci-value">github.com/Sana874</span>
-          </div>
-        </a>
+<section id="contact" class="section contact-sec">
+  <div class="wrap">
+    <div class="sh"><span class="sh-bar"></span><h2 class="sh-text">Contact</h2></div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">Open to AI/ML internships, product roles, CV and data science positions &mdash; graduating September 2026.</p>
+        <div class="clinks">
+          <a href="mailto:sanafirdous874@gmail.com" class="clink"><i class="fa-regular fa-envelope"></i><div><span>Email</span><strong>sanafirdous874@gmail.com</strong></div></a>
+          <a href="tel:+971502004587" class="clink"><i class="fa-solid fa-phone"></i><div><span>Phone</span><strong>+971 50 200 4587</strong></div></a>
+          <a href="https://linkedin.com/in/sana-firdous-134138272/" target="_blank" class="clink"><i class="fa-brands fa-linkedin"></i><div><span>LinkedIn</span><strong>sana-firdous-134138272</strong></div></a>
+          <a href="https://github.com/Sana874" target="_blank" class="clink"><i class="fa-brands fa-github"></i><div><span>GitHub</span><strong>Sana874</strong></div></a>
+        </div>
       </div>
-    </div>
-
-    <div class="contact-right">
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label>NAME</label>
-          <input type="text" name="name" placeholder="Your name" class="form-input">
-        </div>
-        <div class="form-group">
-          <label>EMAIL</label>
-          <input type="email" name="email" placeholder="your@email.com" class="form-input">
-        </div>
-        <div class="form-group">
-          <label>SUBJECT</label>
-          <input type="text" name="subject" placeholder="Internship / Collaboration / Opportunity" class="form-input">
-        </div>
-        <div class="form-group">
-          <label>MESSAGE</label>
-          <textarea name="message" placeholder="Tell me about the role or project..." class="form-textarea" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn-submit">
-          <span>TRANSMIT MESSAGE</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
+      <form id="contactForm">
+        <div class="fg"><label>Name</label><input name="name" type="text" placeholder="Your name"></div>
+        <div class="fg"><label>Email</label><input name="email" type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label>Message</label><textarea name="message" rows="5" placeholder="Tell me about the role&hellip;"></textarea></div>
+        <button type="submit" class="btn-gold" style="border:none;cursor:pointer;width:100%;justify-content:center"><span>Send Message</span> <i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">SANA FIRDOUS</div>
-    <p class="footer-text">BITS Pilani Dubai · CS · CGPA <span class="accent">9.41</span> · Graduating 2026</p>
+  <div class="wrap footer-inner">
+    <span>Sana Firdous &bull; BITS Pilani Dubai &bull; 2026</span>
     <div class="footer-links">
-      <a href="#home">HOME</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="https://github.com/Sana874" target="_blank">GITHUB</a>
-      <a href="https://www.linkedin.com/in/sana-firdous-134138272/" target="_blank">LINKEDIN</a>
-      <a href="#contact">CONTACT</a>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/Sana874" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/sana-firdous-134138272/" target="_blank">LinkedIn</a>
     </div>
-    <p class="footer-copy">© 2025 Sana Firdous Abdul Kalam · Sharjah, UAE</p>
   </div>
 </footer>
 
